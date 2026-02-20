@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GMS Biometric Authentication</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00b2d6",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2023",
+                        "navy-deep": "#001f3f",
+                        "navy-light": "#1a3a5f"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: max(884px, 100dvh);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(15, 32, 35, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .biometric-button {
+            @apply relative flex flex-col items-center justify-center p-6 rounded-2xl bg-white/40 dark:bg-white/5 border border-white/30 dark:border-white/10 transition-all duration-200 active:scale-95 hover:bg-white/60 dark:hover:bg-white/10;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-gradient-to-br from-navy-deep via-navy-light to-primary/20 p-4">
+<div class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4">
+<div class="text-white flex size-10 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">shield_person</span>
+</div>
+<h2 class="text-white text-sm font-semibold tracking-wide uppercase tracking-[0.1em]">GMS Authentication</h2>
+<div class="w-10"></div>
+</div>
+<div class="glass-card w-full max-w-sm rounded-[2.5rem] p-8 shadow-2xl">
+<div class="flex flex-col items-center mb-10">
+<div class="size-16 bg-primary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20 mb-4">
+<span class="material-symbols-outlined text-white text-4xl">fingerprint</span>
+</div>
+<h1 class="text-[#0c1a1d] dark:text-white text-2xl font-bold tracking-tight text-center">Biometric Sign-in</h1>
+<p class="text-[#0c1a1d]/70 dark:text-white/70 text-sm font-normal leading-relaxed text-center mt-2 px-4">
+                    Use Face ID or Touch ID to securely access the Grievance Management System.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<button class="biometric-button">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">face_retouching_natural</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#0c1a1d]/60 dark:text-white/60">Face ID</span>
+</button>
+<button class="biometric-button">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">fingerprint</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-[#0c1a1d]/60 dark:text-white/60">Touch ID</span>
+</button>
+</div>
+<div class="flex items-center gap-4 mb-8">
+<div class="h-[1px] flex-1 bg-[#0c1a1d]/10 dark:bg-white/10"></div>
+<span class="text-[10px] font-bold text-[#0c1a1d]/40 dark:text-white/40 uppercase tracking-[0.2em]">OR</span>
+<div class="h-[1px] flex-1 bg-[#0c1a1d]/10 dark:bg-white/10"></div>
+</div>
+<div class="space-y-4">
+<label class="block text-center text-[10px] font-bold text-[#0c1a1d]/50 dark:text-white/50 uppercase tracking-[0.15em]">Enter 6-Digit Backup Token</label>
+<div class="flex justify-between gap-2 max-w-xs mx-auto">
+<input class="w-10 h-12 text-center text-xl font-bold bg-white/50 dark:bg-white/10 border-2 border-primary/20 dark:border-white/10 rounded-xl focus:border-primary focus:ring-0 text-[#0c1a1d] dark:text-white transition-colors" maxlength="1" placeholder="•" type="text"/>
+<input class="w-10 h-12 text-center text-xl font-bold bg-white/50 dark:bg-white/10 border-2 border-primary/20 dark:border-white/10 rounded-xl focus:border-primary focus:ring-0 text-[#0c1a1d] dark:text-white transition-colors" maxlength="1" placeholder="•" type="text"/>
+<input class="w-10 h-12 text-center text-xl font-bold bg-white/50 dark:bg-white/10 border-2 border-primary/20 dark:border-white/10 rounded-xl focus:border-primary focus:ring-0 text-[#0c1a1d] dark:text-white transition-colors" maxlength="1" placeholder="•" type="text"/>
+<input class="w-10 h-12 text-center text-xl font-bold bg-white/50 dark:bg-white/10 border-2 border-primary/20 dark:border-white/10 rounded-xl focus:border-primary focus:ring-0 text-[#0c1a1d] dark:text-white transition-colors" maxlength="1" placeholder="•" type="text"/>
+<input class="w-10 h-12 text-center text-xl font-bold bg-white/50 dark:bg-white/10 border-2 border-primary/20 dark:border-white/10 rounded-xl focus:border-primary focus:ring-0 text-[#0c1a1d] dark:text-white transition-colors" maxlength="1" placeholder="•" type="text"/>
+<input class="w-10 h-12 text-center text-xl font-bold bg-white/50 dark:bg-white/10 border-2 border-primary/20 dark:border-white/10 rounded-xl focus:border-primary focus:ring-0 text-[#0c1a1d] dark:text-white transition-colors" maxlength="1" placeholder="•" type="text"/>
+</div>
+</div>
+<div class="mt-8">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-2xl shadow-lg shadow-primary/30 flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
+<span>Verify Identity</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+<p class="text-[10px] text-center text-[#0c1a1d]/40 dark:text-white/30 mt-8 leading-tight">
+                Anonymity preserved via end-to-end encryption.<br/>Grievance Management System (GMS) v4.2.0
+            </p>
+</div>
+<div class="mt-8 mb-8 flex flex-col items-center gap-4">
+<a class="text-primary font-semibold text-sm flex items-center gap-1 hover:underline decoration-2 underline-offset-4" href="#">
+<span class="material-symbols-outlined text-lg">help</span>
+                Need help?
+            </a>
+<div class="w-32 h-1 bg-white/20 dark:bg-white/10 rounded-full mt-2"></div>
+</div>
+</div>
+
+</body></html>
